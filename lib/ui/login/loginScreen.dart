@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Image.asset("images/background.png"),
+                Image.asset("images/loginUi/background.png"),
                 Positioned(
                   top: MediaQuery.of(context).size.height * 0.24,
                   left: MediaQuery.of(context).size.width * 0.36,
@@ -30,16 +30,16 @@ class LoginScreen extends StatelessWidget {
                     left: MediaQuery.of(context).size.width * 0.05,
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height * 0.23,
-                        child: Image.asset("images/light-1.png"))),
+                        child: Image.asset("images/loginUi/light-1.png"))),
                 Positioned(
                     left: MediaQuery.of(context).size.width * 0.38,
                     child: SizedBox(
                         height: MediaQuery.of(context).size.height * 0.18,
-                        child: Image.asset("images/light-2.png"))),
+                        child: Image.asset("images/loginUi/light-2.png"))),
                 Positioned(
                   left: MediaQuery.of(context).size.width * 0.75,
                   top: MediaQuery.of(context).size.height * 0.08,
-                  child: Image.asset("images/clock.png"),
+                  child: Image.asset("images/loginUi/clock.png"),
                 )
               ],
             ),
