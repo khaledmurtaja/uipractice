@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:uipractice/mentalHealth/widgets/emotion_face.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,12 +10,12 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.blue[800],
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(25),
-          child: Column(
-            children: [
-              //greetings
-              Row(
+        child: Column(
+          children: [
+            //greetings
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
@@ -47,11 +48,14 @@ class HomePage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
-                height: 25.h,
-              ),
-              //search bar
-              Container(
+            ),
+            SizedBox(
+              height: 25.h,
+            ),
+            //search bar
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
                 decoration: BoxDecoration(
                     color: Colors.blue[600],
                     borderRadius: BorderRadius.circular(12)),
@@ -75,11 +79,14 @@ class HomePage extends StatelessWidget {
                       )),
                 ),
               ),
-              SizedBox(
-                height: 28.h,
-              ),
-              //how do you feel layout
-              Column(
+            ),
+            SizedBox(
+              height: 28.h,
+            ),
+            //how do you feel layout
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
@@ -102,34 +109,60 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: 28.h,
                   ),
-                  Column(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: Colors.blue[600]
-                        ),
-                          child:  Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Text(
-                                '😀',
-                              style: TextStyle(fontSize: 20.spMin),
-                            ),
-                          )
+                      EmotionFace(
+                        emotionFace: '😔',
+                        emotionText: 'Badly',
                       ),
-                      SizedBox(height: 10.h,),
-                      const Text(
-                        "badly",
-                        style: TextStyle(color: Colors.white),
-                      )
+                      SizedBox(
+                        width: 12.w,
+                      ),
+                      EmotionFace(
+                        emotionFace: '😊',
+                        emotionText: 'Fine',
+                      ),
+                      SizedBox(
+                        width: 12.w,
+                      ),
+                      EmotionFace(
+                        emotionFace: '😁',
+                        emotionText: 'Well',
+                      ),
+                      SizedBox(
+                        width: 12.w,
+                      ),
+                      EmotionFace(
+                        emotionFace: '😃',
+                        emotionText: 'Excellent',
+                      ),
                     ],
-                  )
+                  ),
                 ],
-                
-              )
-            ],
-          ),
+              ),
+            ),
+            //bottom sheet
+            SizedBox(
+              height: 25.h,
+            ),
+            //bottom sheet
+            Expanded(
+              child: Container(
+                color: Colors.white,
+              ),
+            )
+          ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items:const  [
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "home")
+
+
+        ],
       ),
     );
   }
