@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
           children: [
             //greetings
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 25),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -149,19 +149,79 @@ class HomePage extends StatelessWidget {
             //bottom sheet
             Expanded(
               child: Container(
-                color: Colors.white,
+                decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50)),
+                  color: Colors.grey[100],
+                ),
+                child: Column(
+                  children: [
+                    //first component in the bottom sheet
+                    Padding(
+                      padding: const EdgeInsets.all(35),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Exercises',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.spMin),
+                          ),
+                          const Icon(Icons.more_horiz)
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: ListView(
+                        children: [
+                          Center(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white),
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: ListTile(
+                                      leading: Container(
+                                          decoration:  BoxDecoration(color: Colors.orange,borderRadius: BorderRadius.circular(10)),
+                                          child: Padding(
+                                            padding:  EdgeInsets.all(8.0.w),
+                                            child: const Icon(Icons.favorite,color: Colors.white,),
+                                          ),
+                                      ),
+                                      title: Text("Speaking Skills",style: TextStyle(
+                                        fontWeight: FontWeight.bold
+                                      ),),
+                                      subtitle: Text("16 exercises"),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.all(8.0.w),
+                                    child: const Icon(Icons.more_horiz),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items:const  [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: "home"),
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: "home"),
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: "home")
-
-
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "home")
         ],
       ),
     );

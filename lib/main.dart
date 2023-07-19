@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:uipractice/mentalHealth/home_page.dart';
-import 'package:uipractice/restaurant/starter_page.dart';
+import 'package:uipractice/wallet/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,8 +22,9 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               fontFamily: "Roboto",
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
               useMaterial3: true,
+
             ),
             home: const HomePage());
       },
