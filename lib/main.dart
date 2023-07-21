@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:uipractice/wallet/drawing.dart';
 import 'package:uipractice/wallet/home_page.dart';
 
 void main() {
@@ -22,11 +23,14 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               fontFamily: "Roboto",
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-              useMaterial3: true,
+              floatingActionButtonTheme: const FloatingActionButtonThemeData(
+                backgroundColor: Color(0xff5776FF)
+              )
+              // colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff5776FF)),
+              // useMaterial3: true,
 
             ),
-            home: const HomePage());
+            home: const Drawing());
       },
     );
   }
