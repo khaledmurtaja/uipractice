@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'helper_functions.dart';
+
 class HabitsPage extends StatefulWidget {
   const HabitsPage({Key? key}) : super(key: key);
 
@@ -10,12 +12,12 @@ class HabitsPage extends StatefulWidget {
 
 class _HabitsPageState extends State<HabitsPage> with TickerProviderStateMixin {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
-    int currentMonth = 2;
-    int daysInCurrentMonth = DateTime.utc(now.year, currentMonth + 1, 0).day;
-    print(now.month);
-    print(daysInCurrentMonth);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -124,7 +126,8 @@ class _HabitsPageState extends State<HabitsPage> with TickerProviderStateMixin {
                       Text("Clubs")
                     ]),
               ),
-            )
+            ),
+
           ],
         ),
       ),
