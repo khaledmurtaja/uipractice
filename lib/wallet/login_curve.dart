@@ -8,7 +8,11 @@ class LoginCurve extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(color: Colors.orangeAccent,height: 350,),
+          Container(
+            color: Colors.orangeAccent,
+            height: 350,
+            // width: MediaQuery.of(context).size.width / 2,
+          ),
           ClipPath(
             clipper: MyClipper(),
             child: SizedBox(
@@ -35,9 +39,43 @@ class LoginCurve extends StatelessWidget {
               ),
             ),
           ),
+          Align(
+            alignment: Alignment.topRight,
+            child: ClipPath(
+              clipper: SecondClipper(),
+              child: Container(
+                color: Colors.lightBlueAccent,
+                width: double.infinity,
+                height: 450,
+              ),
+            ),
+          )
         ],
       ),
     );
+  }
+}
+
+class SecondClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.moveTo(size.width, size.height*0.15);
+    path.quadraticBezierTo(
+        size.width * 0.88, size.height * 0.03, size.width, 0);
+    path.lineTo(size.width, size.height * 0.15);
+    path.cubicTo(size.width * 0.9, size.height * 0.18, size.width * 0.8,
+        size.height * 0.3, size.width * 0.7, size.height * 0.45);
+    path.quadraticBezierTo(size.width * 0.6, size.height * 0.49,
+        size.width * 0.65, size.height * 0.77);
+    path.quadraticBezierTo(
+        size.width * 0.7, size.height*0.85, size.width, size.height * 0.9);
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return false;
   }
 }
 
@@ -56,10 +94,8 @@ class MyClipper extends CustomClipper<Path> {
     path.lineTo(size.width, size.height * 0.15);
     path.cubicTo(size.width * 0.9, size.height * 0.18, size.width * 0.8,
         size.height * 0.3, size.width * 0.7, size.height * 0.45);
-    // path.quadraticBezierTo(size.width*0.9, size.height*0.19, size.width*0.8, size.height*0.25);
     path.quadraticBezierTo(size.width * 0.6, size.height * 0.49,
         size.width * 0.65, size.height * 0.77);
-    // path.quadraticBezierTo(size.width*0.5, size.height*0.5, size.width*0.6, size.height*0.7);
     path.quadraticBezierTo(
         size.width * 0.28, size.height, 0, size.height * 0.87);
     return path;
