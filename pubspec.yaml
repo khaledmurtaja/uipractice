@@ -31,6 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.8.4
+  flutter_svg:
+
 
 
 
@@ -65,6 +67,7 @@ flutter:
     - images/loginUi/
     - images/restaurant/
     - images/stock/
+    - images/habitsTracker
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

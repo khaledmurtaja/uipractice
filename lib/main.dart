@@ -5,6 +5,8 @@ import 'package:uipractice/wallet/drawing.dart';
 import 'package:uipractice/wallet/home_page.dart';
 import 'package:uipractice/wallet/login_curve.dart';
 
+import 'HabitTracker/habits_page.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
               // useMaterial3: true,
 
             ),
-            home: const LoginCurve());
+            home: const HabitsPage());
       },
     );
   }
